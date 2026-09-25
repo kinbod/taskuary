@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>On your phone — Taskuary documentation</title>
-<meta name="description" content="The same assistant over WhatsApp or Telegram, and what it may do there.">
+<title>The Assistant's buttons — Taskuary documentation</title>
+<meta name="description" content="Every button under an Assistant card, the one question two of them ask, Remind me, and the words that work typed.">
 <link rel="icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,20 +54,20 @@
       <button class="chev" type="button" aria-expanded="false" aria-label="Show Tasks and agents's sections"></button>
       <div class="secs" hidden><a class="sec" href="./tasks-and-agents#a-tasks-three-lives">A task's three lives</a><a class="sec" href="./tasks-and-agents#sending-work-to-a-coding-agent">Sending work to a coding agent</a><a class="sec" href="./tasks-and-agents#the-general-agent">The general agent</a><a class="sec" href="./tasks-and-agents#sessions-and-transcripts">Sessions and transcripts</a><a class="sec" href="./tasks-and-agents#several-agents-in-one-repository">Several agents in one repository</a><a class="sec" href="./tasks-and-agents#checklists-and-closing">Checklists and closing</a><a class="sec" href="./tasks-and-agents#replies">Replies</a><a class="sec" href="./tasks-and-agents#profiles-and-playbooks">Profiles and playbooks</a><a class="sec" href="./tasks-and-agents#how-work-is-ordered">How work is ordered</a></div>
     </div>
-<div class="entry">
-      <a class="page" href="./assistant">The Assistant's buttons</a>
-      <button class="chev" type="button" aria-expanded="false" aria-label="Show The Assistant's buttons's sections"></button>
-      <div class="secs" hidden><a class="sec" href="./assistant#the-buttons-on-each-card">The buttons on each card</a><a class="sec" href="./assistant#the-two-buttons-that-ask-one-question">The two buttons that ask one question</a><a class="sec" href="./assistant#remind-me">Remind me</a><a class="sec" href="./assistant#words-that-work-typed">Words that work typed</a></div>
+<div class="entry on">
+      <a class="page" href="./assistant" aria-current="page">The Assistant's buttons</a>
+      <button class="chev" type="button" aria-expanded="true" aria-label="Hide The Assistant's buttons's sections"></button>
+      <div class="secs"><a class="sec" href="#the-buttons-on-each-card" data-sec="the-buttons-on-each-card">The buttons on each card</a><a class="sec" href="#the-two-buttons-that-ask-one-question" data-sec="the-two-buttons-that-ask-one-question">The two buttons that ask one question</a><a class="sec" href="#remind-me" data-sec="remind-me">Remind me</a><a class="sec" href="#words-that-work-typed" data-sec="words-that-work-typed">Words that work typed</a></div>
     </div>
 <div class="entry">
       <a class="page" href="./reports">Reports and the Advisor</a>
       <button class="chev" type="button" aria-expanded="false" aria-label="Show Reports and the Advisor's sections"></button>
       <div class="secs" hidden><a class="sec" href="./reports#a-report-is-a-pipeline">A report is a pipeline</a><a class="sec" href="./reports#sources">Sources</a><a class="sec" href="./reports#letting-the-ai-write-the-source-cards">Letting the AI write the source cards</a><a class="sec" href="./reports#the-ai-pass">The AI pass</a><a class="sec" href="./reports#where-a-run-goes">Where a run goes</a><a class="sec" href="./reports#schedules">Schedules</a><a class="sec" href="./reports#the-advisor">The Advisor</a><a class="sec" href="./reports#stateful-workflows">Stateful workflows</a><a class="sec" href="./reports#sage-intacct-specifically">Sage Intacct, specifically</a><a class="sec" href="./reports#api">API</a></div>
     </div>
-<div class="entry on">
-      <a class="page" href="./phone" aria-current="page">On your phone</a>
-      <button class="chev" type="button" aria-expanded="true" aria-label="Hide On your phone's sections"></button>
-      <div class="secs"><a class="sec" href="#the-doorways" data-sec="the-doorways">The doorways</a><a class="sec" href="#what-it-can-do" data-sec="what-it-can-do">What it can do</a><a class="sec" href="#the-morning-line" data-sec="the-morning-line">The morning line</a><a class="sec" href="#handing-over" data-sec="handing-over">Handing over</a><a class="sec" href="#what-it-will-not-do" data-sec="what-it-will-not-do">What it will not do</a></div>
+<div class="entry">
+      <a class="page" href="./phone">On your phone</a>
+      <button class="chev" type="button" aria-expanded="false" aria-label="Show On your phone's sections"></button>
+      <div class="secs" hidden><a class="sec" href="./phone#the-doorways">The doorways</a><a class="sec" href="./phone#what-it-can-do">What it can do</a><a class="sec" href="./phone#the-morning-line">The morning line</a><a class="sec" href="./phone#handing-over">Handing over</a><a class="sec" href="./phone#what-it-will-not-do">What it will not do</a></div>
     </div>
 <div class="entry">
       <a class="page" href="./settings">Settings reference</a>
@@ -83,75 +83,195 @@
     <p class="note">Everything here is stored on your own machine, in the same SQLite file as your tasks.</p>
   </aside>
   <main id="doc">
-    <p class="eyebrow">On your phone</p>
+    <p class="eyebrow">The Assistant's buttons</p>
     <article>
-<p>The assistant you talk to in the app is reachable from your phone over WhatsApp or Telegram. It is
-the same conversation and the same assistant — not a notification feed and not a second, weaker
-bot. It can walk you through your work, answer questions about it, and carry out the things the
-page can carry out.</p>
-<h2 id="the-doorways">The doorways<a class="anchor" href="#the-doorways" aria-label="Link to this section">#</a></h2>
-<p>A doorway is one chat, on one channel, that the assistant is allowed to speak in. Set it up in
-<strong>Settings → Assistant on your phone</strong>, which lists every channel you have connected and lets you
-pick the chat and whether it may listen.</p>
-<ol>
-<li>Connect WhatsApp or Telegram under <a href="connections#chat">Connections</a>.</li>
-<li>Send a message to the private chat you want to use — on WhatsApp that is the <strong>Message
-yourself</strong> chat.</li>
-<li>Pick that chat in Settings. Taskuary adds the notification role, names the chat, and switches
-on the assistant for it.</li>
-</ol>
-<div class="callout rule"><p class="eyebrow">Only chats you are alone in</p><p>The picker offers nothing but chats with one member: you. Groups cannot be selected, because an
-answer may name anything in your workspace. The rule is enforced again when a message arrives, so
-the picker is a convenience rather than the guard.</p>
-</div><p>Only messages sent by the linked owner account, in that exact chat, are accepted. Taskuary marks
-its own bridge output so its notifications can never loop back in as if you had typed them.</p>
-<h2 id="what-it-can-do">What it can do<a class="anchor" href="#what-it-can-do" aria-label="Link to this section">#</a></h2>
-<p>Ask it in plain words. These are real examples, not a command list:</p>
-<ul>
-<li>&quot;what needs me?&quot;</li>
-<li>&quot;walk through important email&quot;</li>
-<li>&quot;what is outstanding?&quot;</li>
-<li>&quot;what did the coding agents finish?&quot;</li>
-<li>&quot;reply to Ruth that the numbers are coming tomorrow&quot;</li>
-</ul>
-<p><strong>Walk through</strong> is the one worth knowing. It is the same turn-by-turn walk the Assistant page
-runs: one unresolved item at a time, one question, and it waits for your answer before moving on.
-The phone is not given a cut-down version of it — the walk carries out the page&#39;s job, including
-the actions at the end of each item.</p>
-<p>Answers you give on the phone land in the desktop conversation too, because it is one
-conversation with two doors.</p>
-<h3 id="approving-things">Approving things<a class="anchor" href="#approving-things" aria-label="Link to this section">#</a></h3>
-<p>A reply drafted for you can be approved from the phone. Tagged answers use <code>[tq…]</code> for a task and
-<code>[rv…]</code> for a Review item, and the plain words <code>approve</code>, <code>reject</code> and <code>no reply</code> work as
-shortcuts on the item currently in front of you.</p>
-<p>The approval gate itself does not move: approving on your phone is the same deliberate human
-action as approving on the page, and nothing goes out without one.</p>
-<h2 id="the-morning-line">The morning line<a class="anchor" href="#the-morning-line" aria-label="Link to this section">#</a></h2>
-<p>Once a day, the assistant can open with a short line about the day ahead — what slipped, what is
-waiting, today&#39;s meetings. It is the morning brief&#39;s voice, cut to the length of something you
-read while walking.</p>
-<p>It fires once per day, not once per app start, and it is the same cap the brief itself uses: if
-today&#39;s line has gone out, reopening the app does not produce another.</p>
-<h2 id="handing-over">Handing over<a class="anchor" href="#handing-over" aria-label="Link to this section">#</a></h2>
-<p>When a conversation on the phone reaches something better done at a keyboard — a coding session,
-a long document, a report builder — the assistant hands over rather than pretending. The tab it
-hands to locks onto that item so you arrive where the conversation left off, and the phone thread
-says so plainly instead of going quiet.</p>
-<p>The reverse is true too: a walk started on the page can be picked up on the phone, because the
-walk&#39;s position belongs to the conversation rather than to the surface you started it on.</p>
-<h2 id="what-it-will-not-do">What it will not do<a class="anchor" href="#what-it-will-not-do" aria-label="Link to this section">#</a></h2>
-<ul>
-<li>It will not speak in a group chat, or in a chat you did not choose.</li>
-<li>It will not send anything a human has not approved, on any channel.</li>
-<li>It will not change a setting. Settings are changed in the app, deliberately.</li>
-<li>It will not answer someone else in your chat — only the linked owner account is heard.</li>
-</ul>
-<div class="callout warn"><p class="eyebrow">WhatsApp is an unofficial bridge</p><p>The WhatsApp connector runs a local bridge against an unofficial protocol. It works well, and it
-is not a supported WhatsApp product: use a number you can afford to lose. Telegram uses a proper
-bot API and has no such caveat.</p>
-</div>
+<p>The Assistant walks you through what is waiting: one card at a time, with a few buttons under it.
+There are eight buttons in all. Anything without a button still works when you ask for it in your own
+words, in the app or on your phone.</p>
+<h2 id="the-buttons-on-each-card">The buttons on each card<a class="anchor" href="#the-buttons-on-each-card" aria-label="Link to this section">#</a></h2>
+<p><figure><img src="img/assistant-buttons.svg" alt="Which buttons each kind of card shows" loading="lazy"><figcaption>Next is on every card. Nothing else is offered unless that card can actually do it.</figcaption></figure></p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Shown on</th>
+<th>What it does</th>
+<th>Runs</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Next</strong></td>
+<td>every card</td>
+<td>Marks it read and moves on. Open work you pass comes back after a few hours (Settings → Passed work comes back after)</td>
+<td>at once</td>
+</tr>
+<tr>
+<td><strong>Mark done</strong></td>
+<td>a draft reply, a finished agent, a task</td>
+<td>The one close: the task is done, an unsent draft is retired, a live agent is stopped, and it leaves your rail</td>
+<td>at once</td>
+</tr>
+<tr>
+<td><strong>Send</strong></td>
+<td>a draft reply</td>
+<td>Sends the draft, then Mark done</td>
+<td>you confirm</td>
+</tr>
+<tr>
+<td><strong>Run it</strong></td>
+<td>an agent&#39;s proposal</td>
+<td>Runs the action the agent proposed</td>
+<td>you confirm</td>
+</tr>
+<tr>
+<td><strong>Reply</strong></td>
+<td>a person&#39;s ask, a finished agent with no draft</td>
+<td>Writes a draft reply. Nothing is sent</td>
+<td>at once</td>
+</tr>
+<tr>
+<td><strong>Make a task</strong></td>
+<td>an ask, an fyi, an idea</td>
+<td>A task on your own list. No agent starts</td>
+<td>you confirm</td>
+</tr>
+<tr>
+<td><strong>Send to agent</strong></td>
+<td>an ask, an fyi, an idea, a meeting, a report</td>
+<td>A task and an agent on it. The card asks which agent</td>
+<td>you confirm</td>
+</tr>
+<tr>
+<td><strong>Not ours</strong></td>
+<td>a draft reply, a proposal, an ask, an fyi</td>
+<td>Files it. The card asks how far</td>
+<td>you confirm</td>
+</tr>
+<tr>
+<td><strong>Save and end session</strong></td>
+<td>an agent waiting on you</td>
+<td>Writes up what the session did and stops the agent. The task stays open</td>
+<td>at once</td>
+</tr>
+</tbody></table>
+<p>A handful of fyi comes as one card with its own <strong>All read, next</strong> button.</p>
+<h2 id="the-two-buttons-that-ask-one-question">The two buttons that ask one question<a class="anchor" href="#the-two-buttons-that-ask-one-question" aria-label="Link to this section">#</a></h2>
+<p><figure><img src="img/assistant-questions.svg" alt="Not ours asks how far; Send to agent asks which agent" loading="lazy"><figcaption>The card asks; nothing runs until you confirm.</figcaption></figure></p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Answer</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Not ours</strong></td>
+<td>Just this once</td>
+<td>This message is filed. Its task is deleted if nothing was done on it, otherwise marked done</td>
+</tr>
+<tr>
+<td></td>
+<td>From now on</td>
+<td>Triage learns to file everything from this sender. Their mail still arrives and stays readable</td>
+</tr>
+<tr>
+<td></td>
+<td>A rule in Settings</td>
+<td>An exclusion rule: their mail never reaches triage, and what already arrived leaves the Timeline. Reversible</td>
+</tr>
+<tr>
+<td><strong>Send to agent</strong></td>
+<td>A coding agent</td>
+<td>A task and a coding agent in a repository. The card asks which repository when it is not clear</td>
+</tr>
+<tr>
+<td></td>
+<td>A non-coding agent</td>
+<td>A task and an agent for reading, checking, drafting or research</td>
+</tr>
+</tbody></table>
+<p>Send to agent starts on the agent triage would pick; the other is one click away on the card.</p>
+<h2 id="remind-me">Remind me<a class="anchor" href="#remind-me" aria-label="Link to this section">#</a></h2>
+<p>Every open task has <strong>Remind me</strong> on its page: tomorrow, next week, in 2 weeks, in a month, or any day
+from the calendar. Until that day the task is under <strong>Upcoming</strong> in Tasks and off your work rail. That
+morning a note goes on the task and it is back on your rail, however long ago it arrived. Ask the
+Assistant the same thing — &quot;bring TQ-0123 back in two weeks&quot; — and it does it at once, with an undo.</p>
+<h2 id="words-that-work-typed">Words that work typed<a class="anchor" href="#words-that-work-typed" aria-label="Link to this section">#</a></h2>
+<p>These have no button. Say them, in the app or on your phone.</p>
+<table>
+<thead>
+<tr>
+<th>Say</th>
+<th>What happens</th>
+<th>Runs</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&quot;reply and tell them…&quot;</td>
+<td>A draft with that gist, for your yes</td>
+<td>at once</td>
+</tr>
+<tr>
+<td>&quot;redraft it shorter&quot;</td>
+<td>The draft written again with the change</td>
+<td>at once</td>
+</tr>
+<tr>
+<td>&quot;yes, go ahead&quot; to a waiting agent</td>
+<td>Your answer goes to the agent</td>
+<td>you confirm</td>
+</tr>
+<tr>
+<td>&quot;run it again&quot; on a report</td>
+<td>The report runs again</td>
+<td>at once</td>
+</tr>
+<tr>
+<td>&quot;split it in two&quot;</td>
+<td>Two tasks from one arrival</td>
+<td>you confirm</td>
+</tr>
+<tr>
+<td>&quot;remember that…&quot;</td>
+<td>A fact kept in Settings → Memory, used by triage and the Assistant</td>
+<td>you confirm</td>
+</tr>
+<tr>
+<td>&quot;clear all the fyi&quot;</td>
+<td>Clears that set from the walk, with the count on the card</td>
+<td>you confirm</td>
+</tr>
+<tr>
+<td>&quot;set up a report that…&quot;</td>
+<td>A walk-through for a report, connection or workflow</td>
+<td>you confirm</td>
+</tr>
+<tr>
+<td>&quot;forward it to Erin&quot;</td>
+<td>A hand-off drafted for your yes</td>
+<td>you confirm</td>
+</tr>
+<tr>
+<td>&quot;stop the agent on TQ-0123&quot;</td>
+<td>Saves and ends that agent&#39;s session</td>
+<td>at once</td>
+</tr>
+<tr>
+<td>&quot;turn auto-drafts off&quot;</td>
+<td>The setting is changed, with an undo</td>
+<td>at once</td>
+</tr>
+<tr>
+<td>&quot;what&#39;s waiting on me?&quot;</td>
+<td>Looked up and answered — tasks, reports, mail, calendar, settings</td>
+<td>at once</td>
+</tr>
+</tbody></table>
+<p>Later and Tomorrow are gone: <strong>Next</strong> is the &quot;not now&quot;, and a date is the task&#39;s <strong>Remind me</strong>.</p>
+
     </article>
-    <nav class="pager"><a class="pn prev" href="./reports"><span>Previous</span>Reports and the Advisor</a><a class="pn next" href="./settings"><span>Next</span>Settings reference</a></nav>
+    <nav class="pager"><a class="pn prev" href="./tasks-and-agents"><span>Previous</span>Tasks and agents</a><a class="pn next" href="./reports"><span>Next</span>Reports and the Advisor</a></nav>
     <p class="stamp">Documentation for Taskuary 0.3.5.6 · updated 2026-09-18</p>
   </main>
 </div>
